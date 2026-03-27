@@ -1,0 +1,17 @@
+crop/*
+crop_*/
+final*/
+svg_separate/*
+pico/*
+output*/
+pico_*/
+to_be_reviewed/
+png/*
+
+node_modules
+package.json
+package-lock.json
+
+READMEE.md
+
+__pycache__
