@@ -1,17 +1,20 @@
-crop/*
+crop/
 crop_*/
 final*/
-svg_separate/*
-pico/*
+!final_font/
+final_font/*
+!final_font/*.woff2
+!final_font/*.ttf
+svg_separate/
+pico/
 output*/
 pico_*/
 to_be_reviewed/
-png/*
+png/
 
-node_modules
+node_modules/
 package.json
 package-lock.json
 
-READMEE.md
-
-__pycache__
+__pycache__/
+*.pyc
