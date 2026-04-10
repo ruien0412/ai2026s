@@ -1,9 +1,7 @@
-import os
 import re
 import unicodedata
 import xml.etree.ElementTree as ET
 from pathlib import Path
-import statistics
 
 def eaw_is_fullwidth(codepoint: int) -> bool:
     """
@@ -44,36 +42,9 @@ def calculate_bounding_box(tokens):
         return None, None, None, None
     return min_x, max_x, min_y, max_y
 
-def transform_tokens(tokens, global_origin_x, global_origin_y, uniform_square, canvas_size):
-    """
-    用全局基準偏移，統一縮放，翻轉 Y — 所有字形共用同一個變換，保留相對位置
-    """
-    scale = canvas_size / uniform_square
-    
-    new_tokens = []
-    is_x = True
-    
-    for cmd, val in tokens:
-        if cmd:
-            new_tokens.append(cmd)
-            is_x = True
-        elif val:
-            num = float(val)
-            if is_x:
-                x_val = (num - global_origin_x) * scale
-                new_tokens.append(format(x_val, '.2f'))
-                is_x = False
-            else:
-                y_val = (num - global_origin_y) * scale
-                flipped_y = canvas_size - y_val
-                new_tokens.append(format(flipped_y, '.2f'))
-                is_x = True
-    
-    return new_tokens
-
 def transform_tokens_with_shift(tokens, global_origin_x, global_origin_y, uniform_square, canvas_size, shift_x, shift_y):
     """
-    和 transform_tokens 相同，但額外加上偏移量，讓超出邊界的字移回來
+    用全局基準偏移，統一縮放，翻轉 Y — 所有字形共用同一個變換，保留相對位置，但額外加上偏移量，讓超出邊界的字移回來
     """
     scale = canvas_size / uniform_square
     
@@ -100,7 +71,7 @@ def transform_tokens_with_shift(tokens, global_origin_x, global_origin_y, unifor
 
 def create_svg_font_with_flip():
     font_name = 'MyFont'
-    input_folder = Path('pico')
+    input_folder = Path('my_output_folder')
     output_dir = Path('final_font')
     output_path = output_dir / 'fontpico_py2.svg'
     
@@ -149,7 +120,7 @@ def create_svg_font_with_flip():
             all_max_y.append(max_y)
             
         except Exception as e:
-            pass
+            print(f"Error scanning {svg_path.name}: {e}")
     
     # 用中位數取範圍，排除歪字的影響
     all_min_x.sort()
@@ -181,7 +152,6 @@ def create_svg_font_with_flip():
     print(f"裁剪後寬={crop_width:.2f}, 高={crop_height:.2f}, 統一正方形邊長={uniform_square:.2f}")
     
     canvas_size = 300  # 放大到 300x300
-    MARGIN = 15  # 每個字形左右各留的邊距（單位同 units-per-em）
     FULLWIDTH_ADV = 300   # 全形字（CJK、假名、注音等）推進寬度
     HALFWIDTH_ADV = 150   # 半形字（ASCII、拉丁字母等）推進寬度
     
