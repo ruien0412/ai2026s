@@ -16,7 +16,7 @@ def convert_with_timeout(svg_file, png_dir, output_size=300, timeout_seconds=60)
     # Try cairosvg first
     try:
         result = subprocess.run(
-            ["cairosvg", str(svg_file), "-o", str(png_path), "-W", str(output_size), "-H", str(output_size)],
+            ["cairosvg", str(svg_file), "-o", str(png_path), "-W", str(output_size), "-H", str(output_size), "-b", "white"],
             timeout=timeout_seconds,
             capture_output=True,
             text=True
@@ -39,7 +39,7 @@ def _try_inkscape(svg_file, png_path, output_size, timeout_seconds):
     """Fallback to inkscape if cairosvg fails or times out"""
     try:
         result = subprocess.run(
-            ["inkscape", str(svg_file), "--export-type=png", f"--export-filename={png_path}", f"--export-width={output_size}", f"--export-height={output_size}"],
+            ["inkscape", str(svg_file), "--export-type=png", f"--export-filename={png_path}", f"--export-width={output_size}", f"--export-height={output_size}", "--export-background=white"],
             timeout=timeout_seconds,
             capture_output=True,
             text=True
