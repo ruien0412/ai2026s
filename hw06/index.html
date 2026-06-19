@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="zh-Hant-TW">
 <head>
@@ -153,7 +154,7 @@
   <!-- ------------------------------------------------>
   <div class="row hw12">
     <div class="col-md-12 twenty">
-      心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。心得報告 105 字。
+      通過這次作業，我深入體驗了ComfyUI這個強大的文生圖工具，學會了如何在Civitai平台上尋找和使用開源模型。透過節點式的工作流設計，理解了AI模型的運作邏輯和各個模塊之間的連接方式。這個過程不僅讓我能夠成功生成高質量的影像，更重要的是培養了我對AI創意工具的實踐能力。未來希望能探索更多的模型組合方式，創作出更具創意和質感的作品。
     </div>
   </div>
 
@@ -169,22 +170,22 @@
         </tr>
         <tr>
           <td rowspan="4" id="myTotal"></td>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox1"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox1" checked></td>
           <td id='m1'>4</td>
-          <td>Simple baseline - 描述</td>
+          <td>Simple baseline - Comfy UI 環境設定完成</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox2"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox2" checked></td>
           <td id='m2'>4</td>
-          <td>Medium baseline - 描述</td>
+          <td>Medium baseline - 生成角色的圖片</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox3"></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox3" checked></td>
           <td id='m3'>2</td>
-          <td>Strong baseline - 描述</td>
+          <td>Strong baseline - 生成完整角色動畫</td>
         </tr>
         <tr>
-          <td><input type="checkbox" class="flipswitch" id="myCheckbox4" checked></td>
+          <td><input type="checkbox" class="flipswitch" id="myCheckbox4"></td>
           <td id='m4'>-10</td>
           <td>沒有寫100字心得</td>
         </tr>
@@ -195,13 +196,93 @@
 
   <!-- ------------------------------------------------>
   <div class="row hw12 bottomrow">
-    <div class="col-md-12 twenty">
-      <video id="video1" style="width:100%;max-width:100%;" controls="">
-        <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
-      </video>
+    <div class="col-md-12 twenty" style="background-color:#00AC48;">
+      <figcaption>Comfy UI 環境設定完成</figcaption>
+      <a href="https://civitai.com/models/61643?modelVersionId=67841">CheckPoint: based66_v30</a><br>
+      <a href="https://civitai.com/models/69977/chibi-laugh">LoRA:  chibi-laugh</a><br>  
+      <img src="1.png"  width="100%"><br>
+    </div>
+  </div>
+  
+  <div class="row hw12 bottomrow">
+    <div class="col-md-4 twenty" style="background-color:#ff0000;">
+      <figcaption>生成角色的圖片 - 1</figcaption>
+      <img src="GIF_00001.png"  width="100%"><br>
+    </div>
+    <div class="col-md-4 twenty" style="background-color:#ff0000;">
+      <figcaption>生成角色的圖片 - 2</figcaption>
+      <img src="GIF_00002.png"  width="100%"><br>
+    </div>
+    <div class="col-md-4 twenty" style="background-color:#ff0000;">
+      <figcaption>生成角色的圖片 - 3</figcaption>
+      <img src="GIF_00003.png"  width="100%"><br>
     </div>
   </div>
 
+  
+  <div class="row hw12 bottomrow">
+    <div class="col-md-4 twenty" style="background-color:#7030a0;">
+      <figcaption>生成完整角色動畫 - 1</figcaption>
+      <img src="GIF_00001.gif" width="100%"><br>
+      <td> 使用提示詞:
+          "0" :"dawn, empty streets, hoodie, hands in pockets, soft mist, golden hour begins",
+          "10" :"early morning, convenience store, warm light, coffee cup, sleepy expression",
+          "20" :"morning, crowded station, school uniform, backpack, cherry blossoms falling",
+          "30" :"noon, rooftop, bento box, gentle breeze, squinting in sunlight",
+          "40" :"afternoon, back alley, casual outfit, earphones, graffiti wall, cat nearby",
+          "50" :"late afternoon, riverside, sitting on railing, sundress, legs dangling, sparkling water",
+          "60" :"golden hour, bridge, backlit silhouette, hair blowing, city skyline behind",
+          "70" :"sunset, park bench, tired smile, shopping bags, warm orange sky",
+          "80" :"dusk, street food stall, paper cup, steam rising, neon signs beginning to glow",
+          "90" :"night, rainy street, transparent umbrella, reflections on wet pavement, alone",
+          "100" :"late night, convenience store again, different outfit, same tired eyes",
+          "110" :"midnight, window seat, city lights below, quiet, head resting on glass"
+      </td>
+    </div>
+    <div class="col-md-4 twenty" style="background-color:#7030a0;">
+      <figcaption>生成完整角色動畫 - 2</figcaption>
+      <img src="GIF_00002.gif" width="100%"><br>
+      <td> 使用提示詞:
+          "0" :"(1boy, male:1.2), solo, young recruit, ill-fitting armor, nervous expression, training yard, dawn, fully clothed",
+          "10" :"(1boy, male:1.2), solo, first battle, dirt and scratches on face, gripping sword tightly, fear in eyes, fully clothed",
+          "20" :"(1boy, male:1.2), solo, survivor, bandaged arm over armor, exhausted but determined, campfire light, fully clothed",
+          "30" :"(1boy, male:1.2), solo, gaining skill, improved armor, confident stance, forest path, midday sun, fully clothed",
+          "40" :"(1boy, male:1.2), solo, first real victory, blood-stained blade, triumphant smile, battlefield aftermath, fully clothed",
+          "50" :"(1boy, male:1.2), solo, veteran traveler, weathered cloak, scars on face, mountain pass, cold wind, fully clothed",
+          "60" :"(1boy, male:1.2), solo, facing tragedy, kneeling beside fallen ally, rain, grief stricken expression, fully clothed",
+          "70" :"(1boy, male:1.2), solo, dark turn, darker armor, colder eyes, abandoned ruins, storm clouds, fully clothed",
+          "80" :"(1boy, male:1.2), solo, redemption arc, glowing weapon, resolute expression, dawn breaking through clouds, fully clothed",
+          "90" :"(1boy, male:1.2), solo, final battle, legendary armor, intense action pose, lightning, epic scale, fully clothed",
+          "100" :"(1boy, male:1.2), solo, victorious, kneeling in exhaustion, golden light, cheering crowd silhouettes, fully clothed",
+          "110" :"(1boy, male:1.2), solo, legend status, ornate ceremonial armor, calm wise expression, throne room, sunset through stained glass, fully clothed"
+          <br><br>
+          使用負面提示詞:
+          (bad quality, worst quality:1.2), (nude, naked, nsfw:1.3), (exposed skin, bare chest, see-through clothing, partially clothed:1.2), (1girl, female:1.3), bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name
+      </td>
+    </div>
+    <div class="col-md-4 twenty" style="background-color:#7030a0;">
+      <figcaption>生成完整角色動畫 - 3</figcaption>
+      <img src="GIF_00003.gif" width="100%"><br>
+      <td> 使用提示詞:
+          "0" :"(1boy, male:1.2), solo, deckhand, ragged shirt, scrubbing deck, dawn, calm sea, fully clothed",
+          "10" :"(1boy, male:1.2), solo, first storm survived, soaked clothes, gripping rope, terrified determination, fully clothed",
+          "20" :"(1boy, male:1.2), solo, learning swordplay, wooden practice sword, focused expression, ship deck, midday sun, fully clothed",
+          "30" :"(1boy, male:1.2), solo, first real fight, cutlass drawn, fierce grin, cannon smoke, fully clothed",
+          "40" :"(1boy, male:1.2), solo, treasure discovery, gold coins in hands, wide-eyed excitement, cave interior, torch light, fully clothed",
+          "50" :"(1boy, male:1.2), solo, mutiny survivor, torn coat, cold calculating gaze, stormy sea, lightning, fully clothed",
+          "60" :"(1boy, male:1.2), solo, marooned, tattered clothes, desperate survival, deserted island, blazing sun, fully clothed",
+          "70" :"(1boy, male:1.2), solo, rebuilding, makeshift raft, sunburned skin under shirt, resolute expression, sunset, fully clothed",
+          "80" :"(1boy, male:1.2), solo, new crew assembled, captain's coat, commanding presence, ship bow, strong wind, fully clothed",
+          "90" :"(1boy, male:1.2), solo, naval battle, ornate captain's coat, tricorn hat, intense action pose, cannon fire, fully clothed",
+          "100" :"(1boy, male:1.2), solo, legendary status, gold-trimmed coat, confident smirk, treasure piled around, golden light, fully clothed",
+          "110" :"(1boy, male:1.2), solo, retired captain, simple coat, peaceful smile, lighthouse, calm sunset sea, fully clothed"
+          <br><br>
+          使用負面提示詞:
+          (bad quality, worst quality:1.2), (nude, naked, nsfw:1.3), (exposed skin, bare chest, see-through clothing, partially clothed:1.2), (1girl, female:1.3), bad anatomy, bad hands, missing fingers, extra digit, fewer digits, cropped, low quality, normal quality, jpeg artifacts, signature, watermark, username, blurry, artist name      
+      </td>
+    </div>
+  </div>
+  <!-- ------------------------------------------------>
   <!-- ------------------------------------------------>
 
   <!-- ------------------------------------------------>
@@ -252,4 +333,3 @@
 
 </body>
 </html>
-
